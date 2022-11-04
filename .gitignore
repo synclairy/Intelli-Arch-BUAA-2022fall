@@ -1,3 +1,5 @@
 .DS_Store
 *.PNG
+*/*.md
+*.zip
 *.pdf

@@ -42,8 +42,8 @@ class Matmul(object):
             z = np.zeros(d.shape[0], dtype=np.int8)
         l = d.shape[1]
         t = l % self.systolic_size
-        t = 4 - t
-        t = t % 4
+        t = self.systolic_size - t
+        t = t % self.systolic_size
         while t > 0:
             d = np.insert(d, d.shape[1], z, axis=1)
             t = t - 1
